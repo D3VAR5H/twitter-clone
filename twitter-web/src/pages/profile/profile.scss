@@ -1,0 +1,76 @@
+@import "../../styles/variables.scss";
+
+.profile-container {
+	display: flex;
+	justify-content: center;
+
+	margin-top: $margin-xl;
+
+	.left-section {
+		margin: $margin-xs;
+		width: 300px;
+
+		.wrapper {
+			background-color: $base-color;
+			border-radius: 2 * $border-radius;
+
+			color: $grey;
+		}
+
+		.follow-btn {
+			margin: $margin-m $margin-s;
+
+			button {
+				width: 100%;
+				padding: $padding-s;
+				border-style: none;
+				border-radius: 100px;
+				background-color: $accent;
+
+				color: $white;
+				font-size: $size-m;
+			}
+		}
+	}
+
+	.right-section {
+		flex-grow: 1;
+		flex-basis: 500px;
+		max-width: 600px;
+		margin: 0 $margin-xs;
+		height: 650px;
+		overflow-y: auto;
+	}
+
+	@media only screen and (max-width: 1074px) {
+		flex-direction: column;
+		align-items: center;
+
+		margin: 0;
+
+		.right-section {
+			width: 100%;
+			height: unset;
+			overflow-y: visible;
+			margin-bottom: $margin-l;
+		}
+
+		.left-section {
+			margin-top: 100px;
+		}
+	}
+}
+::-webkit-scrollbar {
+	width: 6px;
+}
+::-webkit-scrollbar-track {
+	background-color: rgb(0, 0, 0);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(transparent, $accent);
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(transparent, #00c6ff);
+}
