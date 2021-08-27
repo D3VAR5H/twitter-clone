@@ -1,1 +1,16 @@
 @import "global.scss";
+@import "variables.scss";
+
+body{
+    background-color: $bg-color;
+
+
+    #root{
+        width:100%;
+        display: flex;
+
+        .main{
+            flex-grow: 1;
+        }
+    }
+}

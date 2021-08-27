@@ -3,7 +3,7 @@
 .sidebar {
 	background-color: $base-color;
 	height: 100vh;
-	max-width: 250px;
+	width: 250px;
 	color: $grey;
 	padding: $padding-m;
 
@@ -75,4 +75,12 @@
 	.logout {
 		border-top: 1px solid $base-color-light;
 	}
+
+	// &:after {
+	// 	content: "";
+	// 	width: 40px;
+	// 	height: 100vh;
+	// 	border-radius: 40px 0 0 40px;
+	// 	background-color: $base-color;
+	// }
 }

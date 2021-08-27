@@ -1,0 +1,55 @@
+@import "../../styles/variables.scss";
+
+.tweet {
+	display: flex;
+	padding: $padding-m;
+	margin: $margin-xs;
+	border-radius: 2 * $border-radius;
+
+	max-width: 650px;
+
+	background-color: $base-color;
+
+	&-profile {
+		width: 2 * $size-xl;
+		margin-right: $margin-s;
+
+		img {
+			width: 2 * $size-xl;
+			height: 2 * $size-xl;
+			border-radius: $size-xl;
+		}
+	}
+
+	&-main {
+		flex-grow: 1;
+		color: $grey-light;
+
+		.heading {
+			margin-top: $margin-xs;
+
+			.name {
+				font-size: $size-m;
+				margin-right: 2 * $margin-xs;
+				font-weight: 700;
+			}
+
+			.username {
+				font-size: $size-s;
+				color: $grey;
+                opacity: 50%;
+			}
+		}
+
+		.content {
+			p {
+				margin: $margin-s 0;
+                font-weight: 100;
+                letter-spacing: 0.8px;
+			}
+			img {
+				margin: $margin-s 0;
+			}
+		}
+	}
+}

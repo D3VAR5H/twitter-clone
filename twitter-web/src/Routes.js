@@ -7,14 +7,14 @@ import Profile from "./pages/profile/Profile";
 
 const Routes = () => {
 	return (
-		<div>
+		<>
 			<Router>
 				<Switch>
 					<PrivateRoute exact path="/home" component={Home} />
 					<PrivateRoute exact path="/profile" component={Profile} />
 				</Switch>
 			</Router>
-		</div>
+		</>
 	);
 };
 
