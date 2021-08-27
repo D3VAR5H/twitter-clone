@@ -1,0 +1,61 @@
+$main-container-width: 960px;
+
+//COLORS
+$bg-color: #262d37;
+
+$base-color: #282a34;
+$base-color-light: lighten($base-color, 10%);
+
+$white: #fff;
+
+$accent: #2ba7f3;
+$accent-dark: darken($accent, 20%);
+$accent-hover: darken($accent, 5%);
+
+$accent-alt: #4648ae;
+$accent-alt-dark: darken($accent-alt, 20%);
+$accent-alt-hover: darken($accent-alt, 5%);
+
+$grey: #d9d9d9;
+$grey-light: #f1f1f1;
+
+//TYPOGRAPHY
+$main-family: "Nunito", "Source Sans Pro", Helvetica, Arial, sans-serif;
+
+$main-weight: 300;
+$bold-weight: 500;
+
+$line-height: 1.5em;
+$line-height-alt: 1.2em;
+
+$size-xs: 0.5em;
+$size-s: 0.85em;
+$size-m: 16px;
+$size-l: 1.1em;
+$size-xl: 24px;
+
+//SPACING
+$margin-xs: 5px;
+$margin-s: 10px;
+$margin-m: 20px;
+$margin-l: 40px;
+$margin-xl: 80px;
+
+$padding-s: $margin-s $margin-s + 5px;
+$padding-m: $margin-m;
+$padding-l: $margin-m + 10px $margin-l;
+
+//BORDERS
+$border-style: solid;
+$border-width: 1px;
+$border-width-alt: 2px;
+$border-radius: 5px;
+
+//ANIMATIONS
+$transition-duration: 0.3s;
+$transition-duration-alt: 0.1s;
+$transition-timing: ease;
+
+//ELEMENTS
+$header-height: 74px;
+$sidebar-width: 250px;
