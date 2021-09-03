@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.tweet-wrapper {
+	.cmd {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		.form_close {
+			position: absolute;
+			right: 0;
+		}
+		.title-bar {
+			margin: 20px 0 0;
+		}
+
+		.textarea {
+			border: 1px solid #aaa;
+			font-family: "Nunito", sans-serif;
+			margin: 20px 0;
+		}
+
+		button[type="submit"] {
+			background: #079bcf;
+			border: none;
+			border-radius: 8px;
+			color: #fff;
+			cursor: pointer;
+			font-family: "Nunito", sans-serif;
+			font-size: 16px;
+			height: 32px;
+			width: 100px;
+			overflow: hidden;
+			transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+
+			&:hover {
+				background: #007ba5;
+			}
+		}
+	}
+}

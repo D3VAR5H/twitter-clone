@@ -7,10 +7,12 @@ body {
 	#root {
 		width: 100%;
 		display: flex;
+		min-height: 100vh;
 
 		.main {
 			margin-left: 250px;
 			flex-grow: 1;
+			padding: 0 50px;
 		}
 	}
 }

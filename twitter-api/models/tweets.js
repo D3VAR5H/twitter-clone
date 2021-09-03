@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const User = require("./users")
+
 let TweetSchema = new Schema({
 	message: { type: String, max: 140, required: true },
 	createdDate: {

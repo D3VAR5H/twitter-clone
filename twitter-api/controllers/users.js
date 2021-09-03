@@ -1,4 +1,3 @@
-const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -8,6 +7,7 @@ const Follow = require("../models/follow");
 exports.user = async (req, res, next) => {
 	// fetch a particular user
 	const user = await User.findOne({ _id: req.user.userId });
+	delete user.password;
 
 	if (user) {
 		res.status(200).json({ user });
@@ -75,27 +75,29 @@ exports.user_login = async (req, res, next) => {
 		return res.status(400).json({ error: "No such user exist" });
 	}
 
-	const validated_password = await bcrypt.compare(req.body.password);
-	if (!validated_password) {
-		return res.status(400).json({ error: "Invalid credentials" });
-	}
-
-	jwt.sign({ userID: user._id, username: user.username }, process.env.USER_ACCESS_KEY, (err, token) => {
-		if (err) return res.status(500).json({ err });
-		res.setHeader("authorization", "Bearer " + token);
-		return res.status(200).json({ token });
-	});
+	await bcrypt
+		.compare(req.body.password, user.password)
+		.then(() => {
+			jwt.sign({ userId: user._id, username: user.username }, "secretKey", (err, token) => {
+				if (err) return res.status(500).json({ err });
+				res.setHeader("authorization", "Bearer " + token);
+				return res.status(200).json({ token });
+			});
+		})
+		.catch((err) => {
+			return res.status(400).json({ err: err, error: "Invalid credentials" });
+		});
 };
 
 exports.user_fetch = async (req, res, next) => {
-	if (!req.params.userId) {
+	if (!req.params.username) {
 		return res.status(400).json({
-			message: "Please send user id",
+			message: "Please send username",
 		});
 	}
 
 	// fetch a particular user
-	const user = await User.findOne({ _id: req.data.userId });
+	const user = await User.findOne({ username: req.params.username });
 
 	if (user) {
 		res.status(200).json({ user });

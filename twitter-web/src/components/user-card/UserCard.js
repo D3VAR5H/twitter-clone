@@ -2,13 +2,15 @@ import React from "react";
 
 import "./user-card.scss";
 
-const UserCard = () => {
+import placeholder from "../../media/placeholder_image.png"
+
+const UserCard = (user) => {
 	return (
 		<div className="user">
 			<div className="user-avatar">
-				<img src="" />
-				<span className="name">Jon Doe</span>
-				<span className="username">@jon-doe</span>
+				<img src={placeholder} />
+				<span className="name">{user.name || "Twitter User"}</span>
+				<span className="username">@{user.username || "twitter-user"}</span>
 			</div>
 			<div className="user-stats">
 				<div>

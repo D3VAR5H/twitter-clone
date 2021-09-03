@@ -13,6 +13,8 @@ exports.tweet_create = async (req, res, next) => {
 		user: req.user._id,
 	});
 
+	console.log(tweet);
+
 	// save tweet in the database.
 	await tweet
 		.save()
@@ -37,7 +39,7 @@ exports.tweet_fetch_particular = async (req, res, next) => {
 	}
 
 	// fetch a particular tweet
-	const tweet = await Tweet.findById(req.params.tweetId).populate("user", ["name", "username"]);
+	const tweet = await Tweet.findById(req.params.tweetId).populate("users", ["name", "username"]);
 
 	// save tweet in the database.
 	return res.status(200).json({ tweet });
