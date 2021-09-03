@@ -1,9 +1,9 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-var authenticateMiddleware = require("../middleware/authenticateUser");
+const authenticateMiddleware = require("../middleware/authenticateUser");
 
-var tweet_controller = require("../controllers/tweets");
+const tweet_controller = require("../controllers/tweets");
 
 router.get("/", tweet_controller.tweet_fetch_all);
 router.post("/create", authenticateMiddleware, tweet_controller.tweet_create);
